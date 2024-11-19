@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 import { ToggleButton } from '@mui/material';
-import { ButtonProps, ButtonPropsDefaults, ButtonPropsSchema } from '@usewaypoint/block-button';
+
+import { ButtonProps, ButtonPropsDefaults, ButtonPropsSchema } from '../../../../../../block-button/src';
 
 import BaseSidebarPanel from './helpers/BaseSidebarPanel';
 import ColorInput from './helpers/inputs/ColorInput';

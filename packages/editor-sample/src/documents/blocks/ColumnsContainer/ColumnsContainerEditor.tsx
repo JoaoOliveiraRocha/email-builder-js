@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { ColumnsContainer as BaseColumnsContainer } from '@usewaypoint/block-columns-container';
-
+import { ColumnsContainer as BaseColumnsContainer } from '../../../../../block-columns-container/src';
 import { useCurrentBlockId } from '../../editor/EditorBlock';
 import { setDocument, setSelectedBlockId } from '../../editor/EditorContext';
 import EditorChildrenIds, { EditorChildrenChange } from '../helpers/EditorChildrenIds';

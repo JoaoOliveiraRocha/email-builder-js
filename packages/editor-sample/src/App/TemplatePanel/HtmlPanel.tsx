@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 
-import { renderToStaticMarkup } from '@usewaypoint/email-builder';
-
+import { renderToStaticMarkup } from '../../../../email-builder/src';
 import { useDocument } from '../../documents/editor/EditorContext';
 
 import HighlightedCodePanel from './helper/HighlightedCodePanel';
