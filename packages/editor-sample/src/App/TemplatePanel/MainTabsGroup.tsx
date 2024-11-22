@@ -21,7 +21,7 @@ export default function MainTabsGroup() {
   };
 
   return (
-    <Tabs value={selectedMainTab} onChange={handleChange}>
+    <Tabs  value={selectedMainTab} onChange={handleChange}>
       <Tab
         value="editor"
         label={

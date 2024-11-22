@@ -30,12 +30,30 @@ function getFontFamily(fontFamily: EmailLayoutProps['fontFamily']) {
   }
 }
 
+// export const fontFamilyRegular = {
+//   fontFamily: 'Proxima-Nova,Roboto,Helvetica,Arial,sans-serif',
+//   fontWeight: 'normal',
+//   letterSpacing: '0.01em'
+// };
+// export const fontFamilyBold = {
+//   fontFamily: 'Proxima-Nova,Roboto,HelveticaNeue-Bold,Helvetica,Arial,sans-serif',
+//   fontWeight: 700,
+//   letterSpacing: '0.01em'
+// };
+// export const robotoMono = {
+//   fontFamily: 'Roboto-Mono, monospace',
+//   fontWeight: 400,
+//   letterSpacing: '0.01em'
+// };
+
+
 export default function EmailLayoutEditor(props: EmailLayoutProps) {
   const childrenIds = props.childrenIds ?? [];
   const document = useDocument();
   const currentBlockId = useCurrentBlockId();
 
   return (
+    // main view
     <div
       onClick={() => {
         setSelectedBlockId(null);
@@ -54,20 +72,21 @@ export default function EmailLayoutEditor(props: EmailLayoutProps) {
         minHeight: '100%',
       }}
     >
+      {/* content here */}
       <table
         align="center"
         width="100%"
         style={{
           margin: '0 auto',
-          maxWidth: '600px',
+          maxWidth: props.maxWidth ?? '600px',
           backgroundColor: props.canvasColor ?? '#FFFFFF',
           borderRadius: props.borderRadius ?? undefined,
           border: (() => {
-            const v = props.borderColor;
-            if (!v) {
+            const borderColor = props.borderColor;
+            if (!borderColor) {
               return undefined;
             }
-            return `1px solid ${v}`;
+            return `1px solid ${borderColor}`;
           })(),
         }}
         role="presentation"

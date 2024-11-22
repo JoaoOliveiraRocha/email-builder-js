@@ -9,7 +9,6 @@
     "sourceMap": true,
     "allowJs": true,
     "esModuleInterop": true,
-
     "skipLibCheck": true,
     "declarationMap": true,
     "declaration": true,

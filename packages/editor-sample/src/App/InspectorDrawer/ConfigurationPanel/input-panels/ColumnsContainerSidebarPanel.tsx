@@ -71,13 +71,13 @@ export default function ColumnsContainerPanel({ data, setData }: ColumnsContaine
         }}
       >
         <ToggleButton value="top">
-          <VerticalAlignTopOutlined fontSize="small" />
+          <VerticalAlignTopOutlined color="secondary" fontSize="small" />
         </ToggleButton>
         <ToggleButton value="middle">
-          <VerticalAlignCenterOutlined fontSize="small" />
+          <VerticalAlignCenterOutlined color="secondary" fontSize="small" />
         </ToggleButton>
         <ToggleButton value="bottom">
-          <VerticalAlignBottomOutlined fontSize="small" />
+          <VerticalAlignBottomOutlined color="secondary" fontSize="small" />
         </ToggleButton>
       </RadioGroupInput>
 

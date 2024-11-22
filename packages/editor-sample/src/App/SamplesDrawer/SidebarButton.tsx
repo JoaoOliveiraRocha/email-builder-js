@@ -9,8 +9,9 @@ export default function SidebarButton({ href, children }: { href: string; childr
   const handleClick = () => {
     resetDocument(getConfiguration(href));
   };
+
   return (
-    <Button size="small" href={href} onClick={handleClick}>
+    <Button size="medium" href={href} onClick={handleClick}>
       {children}
     </Button>
   );

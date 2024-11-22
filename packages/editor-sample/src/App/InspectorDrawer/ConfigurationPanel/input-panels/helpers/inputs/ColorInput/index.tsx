@@ -7,6 +7,7 @@ type Props = {
   onChange: (value: string) => void;
   defaultValue: string;
 };
+
 export default function ColorInput(props: Props) {
   return <BaseColorInput {...props} nullable={false} />;
 }
@@ -16,6 +17,7 @@ type NullableProps = {
   onChange: (value: null | string) => void;
   defaultValue: null | string;
 };
+
 export function NullableColorInput(props: NullableProps) {
   return <BaseColorInput {...props} nullable />;
 }

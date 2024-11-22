@@ -15,8 +15,8 @@ export default function ImportJson() {
 
   return (
     <>
-      <Tooltip title="Import JSON">
-        <IconButton onClick={() => setOpen(true)}>
+      <Tooltip title="Import File">
+        <IconButton color="secondary" onClick={() => setOpen(true)}>
           <FileUploadOutlined fontSize="small" />
         </IconButton>
       </Tooltip>

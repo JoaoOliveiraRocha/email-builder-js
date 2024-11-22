@@ -11,6 +11,7 @@ import {
   useSelectedMainTab,
   useSelectedScreenSize,
 } from '../../documents/editor/EditorContext';
+import { BLACK800 } from '../../new-theme';
 import ToggleInspectorPanelButton from '../InspectorDrawer/ToggleInspectorPanelButton';
 import ToggleSamplesPanelButton from '../SamplesDrawer/ToggleSamplesPanelButton';
 
@@ -76,12 +77,9 @@ export default function TemplatePanel() {
     <>
       <Stack
         sx={{
-          height: 49,
-          borderBottom: 1,
+          height: 52,
           borderColor: 'divider',
-          backgroundColor: 'white',
           position: 'sticky',
-          top: 0,
           zIndex: 'appBar',
           px: 1,
         }}
@@ -90,7 +88,7 @@ export default function TemplatePanel() {
         alignItems="center"
       >
         <ToggleSamplesPanelButton />
-        <Stack px={2} direction="row" gap={2} width="100%" justifyContent="space-between" alignItems="center">
+        <Stack sx={{ marginTop: '4px'}} px={2} direction="row" gap={2} width="100%" justifyContent="space-between" alignItems="center">
           <Stack direction="row" spacing={2}>
             <MainTabsGroup />
           </Stack>
@@ -114,7 +112,7 @@ export default function TemplatePanel() {
         </Stack>
         <ToggleInspectorPanelButton />
       </Stack>
-      <Box sx={{ height: 'calc(100vh - 49px)', overflow: 'auto', minWidth: 370 }}>{renderMainPanel()}</Box>
+      <Box sx={{ background: BLACK800, height: 'calc(100vh - 49px)', overflow: 'auto', minWidth: 370 }}>{renderMainPanel()}</Box>
     </>
   );
 }

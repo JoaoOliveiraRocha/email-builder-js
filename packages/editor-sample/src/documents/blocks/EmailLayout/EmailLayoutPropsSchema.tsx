@@ -1,10 +1,6 @@
 import { z } from 'zod';
 
-const COLOR_SCHEMA = z
-  .string()
-  .regex(/^#[0-9a-fA-F]{6}$/)
-  .nullable()
-  .optional();
+import { COLOR_SCHEMA } from '../../../../../document-core/src/utils';
 
 const FONT_FAMILY_SCHEMA = z
   .enum([
@@ -26,9 +22,10 @@ const EmailLayoutPropsSchema = z.object({
   borderColor: COLOR_SCHEMA,
   borderRadius: z.number().optional().nullable(),
   canvasColor: COLOR_SCHEMA,
-  textColor: COLOR_SCHEMA,
-  fontFamily: FONT_FAMILY_SCHEMA,
   childrenIds: z.array(z.string()).optional().nullable(),
+  fontFamily: FONT_FAMILY_SCHEMA,
+  maxWidth: z.union([z.string(), z.number()]).optional().nullable(),
+  textColor: COLOR_SCHEMA
 });
 
 export default EmailLayoutPropsSchema;

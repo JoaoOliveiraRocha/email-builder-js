@@ -40,7 +40,6 @@ const READER_DICTIONARY = buildBlockConfigurationDictionary({
     schema: EmailLayoutPropsSchema,
     Component: EmailLayoutReader,
   },
-  //
   Avatar: {
     schema: AvatarPropsSchema,
     Component: Avatar,

@@ -50,17 +50,18 @@ export default function ImportJsonDialog({ onClose }: ImportJsonDialogProps) {
           onClose();
         }}
       >
+{/* TODO: show example */}
         <DialogContent>
           <Typography color="text.secondary" paragraph>
-            Copy and paste an EmailBuilder.js JSON (
-            <Link
+            Copy and paste an EmailBuilder.js JSON
+            {/* <Link
               href="https://gist.githubusercontent.com/jordanisip/efb61f56ba71bd36d3a9440122cb7f50/raw/30ea74a6ac7e52ebdc309bce07b71a9286ce2526/emailBuilderTemplate.json"
               target="_blank"
               underline="none"
             >
               example
-            </Link>
-            ).
+            </Link> */}
+            .
           </Typography>
           {errorAlert}
           <TextField

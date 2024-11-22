@@ -31,6 +31,8 @@ export default function ImageSidebarPanel({ data, setData }: ImageSidebarPanelPr
       setErrors(res.error);
     }
   };
+  
+  console.log(data);
 
   return (
     <BaseSidebarPanel title="Image block">
@@ -75,13 +77,13 @@ export default function ImageSidebarPanel({ data, setData }: ImageSidebarPanelPr
         onChange={(contentAlignment) => updateData({ ...data, props: { ...data.props, contentAlignment } })}
       >
         <ToggleButton value="top">
-          <VerticalAlignTopOutlined fontSize="small" />
+          <VerticalAlignTopOutlined color="primary" fontSize="small" />
         </ToggleButton>
         <ToggleButton value="middle">
-          <VerticalAlignCenterOutlined fontSize="small" />
+          <VerticalAlignCenterOutlined color="primary" fontSize="small" />
         </ToggleButton>
         <ToggleButton value="bottom">
-          <VerticalAlignBottomOutlined fontSize="small" />
+          <VerticalAlignBottomOutlined color="primary" fontSize="small" />
         </ToggleButton>
       </RadioGroupInput>
 

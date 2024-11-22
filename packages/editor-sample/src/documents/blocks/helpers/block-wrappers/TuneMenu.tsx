@@ -3,6 +3,7 @@ import React from 'react';
 import { ArrowDownwardOutlined, ArrowUpwardOutlined, DeleteOutlined } from '@mui/icons-material';
 import { IconButton, Paper, Stack, SxProps, Tooltip } from '@mui/material';
 
+import { BLACK800 } from '../../../../new-theme';
 import { TEditorBlock } from '../../../editor/core';
 import { resetDocument, setSelectedBlockId, useDocument } from '../../../editor/EditorContext';
 import { ColumnsContainerProps } from '../../ColumnsContainer/ColumnsContainerPropsSchema';
@@ -14,6 +15,7 @@ const sx: SxProps = {
   borderRadius: 64,
   paddingX: 0.5,
   paddingY: 1,
+  background: BLACK800,
   zIndex: 'fab',
 };
 

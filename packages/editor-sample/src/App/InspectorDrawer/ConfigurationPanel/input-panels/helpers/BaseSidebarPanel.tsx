@@ -2,17 +2,21 @@ import React from 'react';
 
 import { Box, Stack, Typography } from '@mui/material';
 
+import { BLACK600 } from '../../../../../new-theme';
+import { contentSuccess } from '../../../../../topper-theme';
+
 type SidebarPanelProps = {
   title: string;
   children: React.ReactNode;
 };
 export default function BaseSidebarPanel({ title, children }: SidebarPanelProps) {
   return (
-    <Box p={2}>
-      <Typography variant="overline" color="text.secondary" sx={{ display: 'block', mb: 2 }}>
+    <Box px={2}>
+      <Typography variant="h3" color={contentSuccess} sx={{ display: 'block', mb: 2 }}>
         {title}
+        <div style={{borderBottom: `1px solid ${BLACK600}`}}></div>
       </Typography>
-      <Stack spacing={5} mb={3}>
+      <Stack spacing={3} mb={2}>
         {children}
       </Stack>
     </Box>

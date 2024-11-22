@@ -1,13 +1,19 @@
 import React from 'react';
 
-import { Box, Button, Divider, Drawer, Link, Stack, Typography } from '@mui/material';
+import { Divider, Drawer, keyframes, Stack, Typography } from '@mui/material';
 
 import { useSamplesDrawerOpen } from '../../documents/editor/EditorContext';
+import { BLACK900, WHITE } from '../../new-theme';
 
 import SidebarButton from './SidebarButton';
-import logo from './waypoint.svg';
 
-export const SAMPLES_DRAWER_WIDTH = 240;
+export const SAMPLES_DRAWER_WIDTH = 272;
+
+const rainbowAnimation = keyframes`
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+`;
 
 export default function SamplesDrawer() {
   const samplesDrawerOpen = useSamplesDrawerOpen();
@@ -21,13 +27,34 @@ export default function SamplesDrawer() {
         width: samplesDrawerOpen ? SAMPLES_DRAWER_WIDTH : 0,
       }}
     >
-      <Stack spacing={3} py={1} px={2} width={SAMPLES_DRAWER_WIDTH} justifyContent="space-between" height="100%">
+      <Stack spacing={3} py={1}
+      sx={{ backgroundColor: BLACK900 }}
+      width={SAMPLES_DRAWER_WIDTH} justifyContent="space-between" height="100%">
         <Stack spacing={2} sx={{ '& .MuiButtonBase-root': { width: '100%', justifyContent: 'flex-start' } }}>
-          <Typography variant="h6" component="h1" sx={{ p: 0.75 }}>
-            EmailBuilder.js
+          
+        <Typography px={2}
+        color={WHITE}
+        
+          sx={{
+            fontWeight: 'bold',
+            fontSize: '12px',
+            paddingTop: '12px',
+            backgroundSize: '200% 200%',
+            display: 'inline-block',
+            transition: 'color 0.5s ease-in-out, background-image 0.5s ease-in-out, background-size 0.5s ease-in-out',
+            '&:hover': {
+              animation: `${rainbowAnimation} 3s ease-in-out infinite`,
+              backgroundClip: 'text',
+              backgroundImage: 'linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet)',
+              backgroundSize: '200% 200%',
+              color: 'transparent',
+            }}}
+>
+            TOPPER-EMAIL-BUILDER
           </Typography>
 
-          <Stack alignItems="flex-start">
+
+          <Stack alignItems="flex-start" px={2}>
             <SidebarButton href="#">Empty</SidebarButton>
             <SidebarButton href="#sample/welcome">Welcome email</SidebarButton>
             <SidebarButton href="#sample/one-time-password">One-time passcode (OTP)</SidebarButton>
@@ -37,41 +64,9 @@ export default function SamplesDrawer() {
             <SidebarButton href="#sample/reservation-reminder">Reservation reminder</SidebarButton>
             <SidebarButton href="#sample/post-metrics-report">Post metrics</SidebarButton>
             <SidebarButton href="#sample/respond-to-message">Respond to inquiry</SidebarButton>
+            <SidebarButton href="#sample/topper-base-email">Topper Base Email</SidebarButton>
           </Stack>
 
-          <Divider />
-
-          <Stack>
-            <Button size="small" href="https://www.usewaypoint.com/open-source/emailbuilderjs" target="_blank">
-              Learn more
-            </Button>
-            <Button size="small" href="https://github.com/usewaypoint/email-builder-js" target="_blank">
-              View on GitHub
-            </Button>
-          </Stack>
-        </Stack>
-        <Stack spacing={2} px={0.75} py={3}>
-          <Link href="https://usewaypoint.com?utm_source=emailbuilderjs" target="_blank" sx={{ lineHeight: 1 }}>
-            <Box component="img" src={logo} width={32} />
-          </Link>
-          <Box>
-            <Typography variant="overline" gutterBottom>
-              Looking to send emails?
-            </Typography>
-            <Typography variant="body2" color="text.secondary" paragraph>
-              Waypoint is an end-to-end email API with a &apos;pro&apos; version of this template builder with dynamic
-              variables, loops, conditionals, drag and drop, layouts, and more.
-            </Typography>
-          </Box>
-          <Button
-            variant="contained"
-            color="primary"
-            sx={{ justifyContent: 'center' }}
-            href="https://usewaypoint.com?utm_source=emailbuilderjs"
-            target="_blank"
-          >
-            Learn more
-          </Button>
         </Stack>
       </Stack>
     </Drawer>

@@ -6,6 +6,7 @@ import RESERVATION_REMINDER from './sample/reservation-reminder';
 import RESET_PASSWORD from './sample/reset-password';
 import RESPOND_TO_MESSAGE from './sample/respond-to-message';
 import SUBSCRIPTION_RECEIPT from './sample/subscription-receipt';
+import TOPPER_BASE_EMAIL from './sample/topper-base-email';
 import WELCOME from './sample/welcome';
 
 export default function getConfiguration(template: string) {
@@ -28,6 +29,8 @@ export default function getConfiguration(template: string) {
         return RESPOND_TO_MESSAGE;
       case 'subscription-receipt':
         return SUBSCRIPTION_RECEIPT;
+      case 'topper-base-email':
+        return TOPPER_BASE_EMAIL;
     }
   }
 

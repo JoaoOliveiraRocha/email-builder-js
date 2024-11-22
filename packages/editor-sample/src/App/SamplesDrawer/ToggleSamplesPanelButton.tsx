@@ -15,5 +15,5 @@ function useIcon() {
 
 export default function ToggleSamplesPanelButton() {
   const icon = useIcon();
-  return <IconButton onClick={toggleSamplesDrawerOpen}>{icon}</IconButton>;
+  return <IconButton color="secondary" onClick={toggleSamplesDrawerOpen}>{icon}</IconButton>;
 }

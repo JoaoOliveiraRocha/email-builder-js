@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { AddOutlined, CloseOutlined } from '@mui/icons-material';
 import { ButtonBase, InputLabel, Menu, Stack } from '@mui/material';
 
+import { WHITE } from '../../../../../../../new-theme';
+
 import Picker from './Picker';
 
 const BUTTON_SX = {
@@ -38,9 +40,11 @@ export default function ColorInput({ label, defaultValue, onChange, nullable }: 
     if (!nullable) {
       return null;
     }
+
     if (typeof value !== 'string' || value.trim().length === 0) {
       return null;
     }
+
     return (
       <ButtonBase
         onClick={() => {
@@ -48,7 +52,7 @@ export default function ColorInput({ label, defaultValue, onChange, nullable }: 
           onChange(null);
         }}
       >
-        <CloseOutlined fontSize="small" sx={{ color: 'grey.600' }} />
+        <CloseOutlined fontSize="small" sx={{ color: WHITE }} />
       </ButtonBase>
     );
   };
@@ -57,6 +61,7 @@ export default function ColorInput({ label, defaultValue, onChange, nullable }: 
     if (value) {
       return <ButtonBase onClick={handleClickOpen} sx={{ ...BUTTON_SX, bgcolor: value }} />;
     }
+    
     return (
       <ButtonBase onClick={handleClickOpen} sx={{ ...BUTTON_SX }}>
         <AddOutlined fontSize="small" />
