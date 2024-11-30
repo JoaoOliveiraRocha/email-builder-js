@@ -5,15 +5,13 @@ export {
   //
   ReaderDocumentSchema,
   //
-  ReaderBlock,
-  //
   default as Reader,
 } from './Reader/core';
 
-
 export type {
   TReaderBlock,
-  TReaderBlockProps,
   TReaderDocument,
+  TReaderBlockProps,
   TReaderProps,
+  ReaderBlock,
 } from './Reader/core';

@@ -14,7 +14,7 @@ const PADDING_SCHEMA = z
 const getPadding = (padding: z.infer<typeof PADDING_SCHEMA>) =>
   padding ? `${padding.top}px ${padding.right}px ${padding.bottom}px ${padding.left}px` : undefined;
 
-export const ImagePropsSchema = z.object({
+export const BannerPropsSchema = z.object({
   style: z
     .object({
       padding: PADDING_SCHEMA,
@@ -41,9 +41,9 @@ export const ImagePropsSchema = z.object({
     .nullable(),
 });
 
-export type ImageProps = z.infer<typeof ImagePropsSchema>;
+export type ImageProps = z.infer<typeof BannerPropsSchema>;
 
-export function Image({ style, props }: ImageProps) {
+export function Banner({ style, props }: ImageProps) {
   const sectionStyle: CSSProperties = {
     padding: getPadding(style?.padding),
     backgroundColor: style?.backgroundColor ?? undefined,
@@ -76,6 +76,14 @@ export function Image({ style, props }: ImageProps) {
   if (!linkHref) {
     return <div style={sectionStyle}>{imageElement}</div>;
   }
+
+
+  return (
+    <div>
+    <BaseBanner aspectRatio={aspectRatio} hasBorderRadius src={src} {...props} />
+  </div>
+  );
+
 
   return (
     <div style={sectionStyle}>

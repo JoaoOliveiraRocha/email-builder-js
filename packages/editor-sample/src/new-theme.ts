@@ -1,6 +1,6 @@
 import { alpha, createTheme, darken, lighten } from '@mui/material/styles';
 
-import { backgroundCritical, backgroundLevel2, backgroundLevel3, colorInfo60, contentDefault, contentSuccess, textDefault } from './topper-theme';
+import { backgroundCritical, backgroundLevel2, backgroundLevel3, brandLight, colorInfo60, contentDefault, contentSuccess, textDefault } from './topper-theme';
 
 export const BLACK900 = '#101010';
 export const BLACK800 = '#212121';
@@ -10,7 +10,7 @@ export const WHITE = '#fff';
 
 const BRAND_NAVY = '#212443';
 const BRAND_BLUE = colorInfo60;
-const BRAND_GREEN = contentSuccess;
+const BRAND_GREEN = brandLight;
 const ORANGE_CRITICAL = backgroundCritical;
 const BRAND_YELLOW = '#F6DC9F';
 const BRAND_PURPLE = '#6C0E7C';
@@ -35,8 +35,6 @@ const BASE_THEME = createTheme({
     fontFamily: '-apple-system, "system-ui", "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
   },
 });
-
-console.log(BASE_THEME);
 
 const THEME = createTheme(BASE_THEME, {
   palette: {
@@ -78,6 +76,9 @@ const THEME = createTheme(BASE_THEME, {
     primary: {
       main: BRAND_GREEN,
     },
+    secondary:{
+      main: '#FFF',
+    }
   },
   components: {
     MuiCssBaseline: {

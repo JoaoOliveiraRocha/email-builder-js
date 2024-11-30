@@ -21,11 +21,9 @@ import ContainerReader from '../blocks/Container/ContainerReader';
 import { EmailLayoutPropsSchema } from '../blocks/EmailLayout/EmailLayoutPropsSchema';
 import EmailLayoutReader from '../blocks/EmailLayout/EmailLayoutReader';
 
-const ReaderContext = createContext<TReaderDocument>({});
+const ReaderContext = createContext<TReaderDocument | null>(null);
 
-function useReaderDocument() {
-  return useContext(ReaderContext);
-}
+let globalDoc = null;
 
 const READER_DICTIONARY = buildBlockConfigurationDictionary({
   ColumnsContainer: {
@@ -80,12 +78,11 @@ export type TReaderBlock = z.infer<typeof ReaderBlockSchema>;
 export const ReaderDocumentSchema = z.record(z.string(), ReaderBlockSchema);
 export type TReaderDocument = Record<string, TReaderBlock>;
 
-const BaseReaderBlock = buildBlockComponent(READER_DICTIONARY);
+const BaseReaderBlock = buildBlockComponent(READER_DICTIONARY, document);
 
-export type TReaderBlockProps = { id: string };
-export function ReaderBlock({ id }: TReaderBlockProps) {
-  const document = useReaderDocument();
-  return <BaseReaderBlock {...document[id]} />;
+export function ReaderBlock({ id, document }: TReaderBlockProps) {
+  console.dir(globalDoc, {depth: null});
+  return <BaseReaderBlock  {...globalDoc[id]} />;
 }
 
 export type TReaderProps = {
@@ -93,9 +90,14 @@ export type TReaderProps = {
   rootBlockId: string;
 };
 export default function Reader({ document, rootBlockId }: TReaderProps) {
+  // console.log(document); // Document is present here!!!
+  // console.log(rootBlockId);
+globalDoc = document;
+  console.log(document);
   return (
-    <ReaderContext.Provider value={document}>
-      <ReaderBlock id={rootBlockId} />
+    <ReaderContext.Provider value={globalDoc}>
+      <ReaderBlock id={rootBlockId} document={globalDoc} />
     </ReaderContext.Provider>
   );
 }
+export type TReaderBlockProps = { id: string };

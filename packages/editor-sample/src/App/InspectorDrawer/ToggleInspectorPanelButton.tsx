@@ -13,13 +13,13 @@ export default function ToggleInspectorPanelButton() {
   };
   if (inspectorDrawerOpen) {
     return (
-      <IconButton onClick={handleClick}>
+      <IconButton color="secondary" onClick={handleClick}>
         <LastPageOutlined fontSize="small" />
       </IconButton>
     );
   }
   return (
-    <IconButton onClick={handleClick}>
+    <IconButton color="secondary" onClick={handleClick}>
       <AppRegistrationOutlined fontSize="small" />
     </IconButton>
   );

@@ -32,7 +32,7 @@ export default function ImageSidebarPanel({ data, setData }: ImageSidebarPanelPr
     }
   };
   
-  console.log(data);
+  // console.log(data);
 
   return (
     <BaseSidebarPanel title="Image block">
@@ -88,7 +88,7 @@ export default function ImageSidebarPanel({ data, setData }: ImageSidebarPanelPr
       </RadioGroupInput>
 
       <MultiStylePropertyPanel
-        names={['backgroundColor', 'textAlign', 'padding']}
+        names={['backgroundColor', 'borderRadius', 'textAlign', 'padding']}
         value={data.style}
         onChange={(style) => updateData({ ...data, style })}
       />

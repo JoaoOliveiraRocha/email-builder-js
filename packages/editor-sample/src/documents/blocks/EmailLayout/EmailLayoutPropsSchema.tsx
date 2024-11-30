@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { COLOR_SCHEMA } from '../../../../../document-core/src/utils';
+import { COLOR_SCHEMA } from '../../../../../document-core/src/types';
 
 const FONT_FAMILY_SCHEMA = z
   .enum([

@@ -34,7 +34,6 @@ export default function SamplesDrawer() {
           
         <Typography px={2}
         color={WHITE}
-        
           sx={{
             fontWeight: 'bold',
             fontSize: '12px',
@@ -48,8 +47,7 @@ export default function SamplesDrawer() {
               backgroundImage: 'linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet)',
               backgroundSize: '200% 200%',
               color: 'transparent',
-            }}}
->
+            }}}>
             TOPPER-EMAIL-BUILDER
           </Typography>
 

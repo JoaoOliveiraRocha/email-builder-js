@@ -9,6 +9,7 @@ type MultiStylePropertyPanelProps = {
   value: TStyle | undefined | null;
   onChange: (style: TStyle) => void;
 };
+
 export default function MultiStylePropertyPanel({ names, value, onChange }: MultiStylePropertyPanelProps) {
   return (
     <>

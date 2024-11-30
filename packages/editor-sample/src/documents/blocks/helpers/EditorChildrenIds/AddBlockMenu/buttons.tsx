@@ -16,11 +16,20 @@ import {
 import { TEditorBlock } from '../../../../editor/core';
 
 type TButtonProps = {
-  label: string;
-  icon: JSX.Element;
   block: () => TEditorBlock;
+  icon: JSX.Element;
+  label: string;
 };
-export const BUTTONS: TButtonProps[] = [
+
+// TODO change this.
+// This shouldn't be defined what a Component needs: I understand why
+// they did that way. I just think the scope of problems it solves should be
+// narrower
+// 
+// The Component should export it's own settings / properties
+// using an interface and the email builder should just read those.
+// Maybe add versioning to the interface(ing)
+export const Buttons: TButtonProps[] = [
   {
     label: 'Heading',
     icon: <HMobiledataOutlined />,
@@ -70,12 +79,12 @@ export const BUTTONS: TButtonProps[] = [
       type: 'Image',
       data: {
         props: {
-          url: 'https://assets.usewaypoint.com/sample-image.jpg',
-          alt: 'Sample product',
+          url: 'https://userimg-assets.customeriomail.com/images/client-env-135607/1726580146765_missing-url_01J8034GNRZDNBT8WV5HASAJXJ.jpg',
+          alt: null,
           contentAlignment: 'middle',
           linkHref: null,
         },
-        style: { padding: { top: 16, bottom: 16, left: 24, right: 24 } },
+        style: { padding: { top: 0, bottom: 0, left: 0, right: 0 } },
       },
     }),
   },
@@ -101,7 +110,7 @@ export const BUTTONS: TButtonProps[] = [
       data: {
         style: { padding: { top: 16, right: 0, bottom: 16, left: 0 } },
         props: {
-          lineColor: '#CCCCCC',
+          lineColor: '#F0F',
         },
       },
     }),
@@ -154,7 +163,6 @@ export const BUTTONS: TButtonProps[] = [
       },
     }),
   },
-
   // { label: 'ProgressBar', icon: <ProgressBarOutlined />, block: () => ({}) },
   // { label: 'LoopContainer', icon: <ViewListOutlined />, block: () => ({}) },
 ];

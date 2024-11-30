@@ -22,7 +22,7 @@ export default function ShareButton() {
   return (
     <>
       <IconButton onClick={onClick}>
-        <Tooltip title="Share current template">
+        <Tooltip color="secondary" title="Share current template">
           <IosShareOutlined fontSize="small" />
         </Tooltip>
       </IconButton>
@@ -35,3 +35,5 @@ export default function ShareButton() {
     </>
   );
 }
+
+// 'inherit' | 'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning',

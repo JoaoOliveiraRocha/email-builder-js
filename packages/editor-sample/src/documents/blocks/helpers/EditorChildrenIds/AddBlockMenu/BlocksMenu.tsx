@@ -1,17 +1,19 @@
 import React from 'react';
 
-import { Box, Menu } from '@mui/material';
+import { Box, Menu, Typography } from '@mui/material';
 
 import { TEditorBlock } from '../../../../editor/core';
 
 import BlockButton from './BlockButton';
-import { BUTTONS } from './buttons';
+import { Buttons } from './buttons';
+import { topperComponents } from './topper-buttons';
 
 type BlocksMenuProps = {
   anchorEl: HTMLElement | null;
   setAnchorEl: (v: HTMLElement | null) => void;
   onSelect: (block: TEditorBlock) => void;
 };
+
 export default function BlocksMenu({ anchorEl, setAnchorEl, onSelect }: BlocksMenuProps) {
   const onClose = () => {
     setAnchorEl(null);
@@ -35,7 +37,16 @@ export default function BlocksMenu({ anchorEl, setAnchorEl, onSelect }: BlocksMe
       transformOrigin={{ vertical: 'top', horizontal: 'center' }}
     >
       <Box sx={{ p: 1, display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr' }}>
-        {BUTTONS.map((k, i) => (
+        {Buttons.map((k, i) => (
+          <BlockButton key={i} label={k.label} icon={k.icon} onClick={() => onClick(k.block())} />
+        ))}
+      </Box>
+      <hr></hr>
+      <Typography align='center' variant='body2' >
+        Topper's
+      </Typography>
+      <Box sx={{ p: 1, display: 'grid',  gridTemplateColumns: '1fr 1fr 1fr 1fr' }}>
+        {topperComponents.map((k, i) => (
           <BlockButton key={i} label={k.label} icon={k.icon} onClick={() => onClick(k.block())} />
         ))}
       </Box>

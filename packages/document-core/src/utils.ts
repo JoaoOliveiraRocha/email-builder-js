@@ -23,6 +23,16 @@ export class BlockNotFoundError extends Error {
   }
 }
 
+export const PADDING_SCHEMA = z
+  .object({
+    top: z.number(),
+    bottom: z.number(),
+    right: z.number(),
+    left: z.number(),
+  })
+  .optional()
+  .nullable();
+
 export const COLOR_SCHEMA = z
   .string()
   .regex(/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/)

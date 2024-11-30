@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 import { AddOutlined, CloseOutlined } from '@mui/icons-material';
-import { ButtonBase, InputLabel, Menu, Stack } from '@mui/material';
+import { ButtonBase, InputLabel, Menu, Stack, Typography } from '@mui/material';
 
-import { WHITE } from '../../../../../../../new-theme';
+import { BLACK600, WHITE } from '../../../../../../../new-theme';
 
 import Picker from './Picker';
 
@@ -75,6 +75,53 @@ export default function ColorInput({ label, defaultValue, onChange, nullable }: 
       <Stack direction="row" spacing={1}>
         {renderOpenButton()}
         {renderResetButton()}
+
+        <div style={{ marginTop: '5px' }}>
+        {value === null ? (
+          <Typography variant="body2" color={BLACK600} sx={{  fontSize: '14px' }}>Transparent </Typography>
+        ) : (
+          <Typography variant="body2" color={'#FFFFFF'} sx={{  mt: '3px', fontSize: '12px' }}>{value}</Typography>)
+        }
+        </div>
+{/* 
+        <FormGroup
+          row
+          sx={{
+            padding: '0px 8px 0px 14px',
+          }}
+        >
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={isTransparent}
+                onChange={(e) => {
+                  const checked = e.target.checked;
+                  setIsTransparent(checked);
+                  if (checked) {
+                    setValue('transparent');
+                    onChange('transparent');
+                  } else {
+                    setValue('');
+                    onChange('');
+                  }
+                }}
+                sx={{
+                  borderLeft: '1px solid white',
+                  borderRadius: '0px',
+                  padding: '4px 8px 7px 12px',
+                  color: 'white',
+                  '&.Mui-checked': {
+                    color: contentSuccess,
+                  },
+                  '& .MuiSvgIcon-root': { fontSize: 24 },
+                }}
+              />
+            }
+            label={'Transparent?'}
+          />
+        </FormGroup> */}
+
+
       </Stack>
       <Menu
         anchorEl={anchorEl}

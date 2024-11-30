@@ -1,7 +1,7 @@
 {
-  "name": "@usewaypoint/email-builder",
-  "version": "0.0.8",
-  "description": "React component to render email messages",
+  "name": "@usewaypoint/block-image",
+  "version": "0.0.5",
+  "description": "@usewaypoint/document compatible Image component",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -16,13 +16,15 @@
     "dist"
   ],
   "scripts": {
-    "build": "npx tsc"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "carlos@usewaypoint.com",
   "license": "MIT",
   "peerDependencies": {
     "react": "^16 || ^17 || ^18",
-    "react-dom": "^16 || ^17 || ^18",
     "zod": "^1 || ^2 || ^3"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^14.2.1"
   }
 }

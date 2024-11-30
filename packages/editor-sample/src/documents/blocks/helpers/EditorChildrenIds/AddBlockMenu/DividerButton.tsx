@@ -7,11 +7,12 @@ type Props = {
   buttonElement: HTMLElement | null;
   onClick: () => void;
 };
-export default function DividerButton({ buttonElement, onClick }: Props) {
+
+const DividerButton = ({ buttonElement, onClick }: Props) => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    function listener({ clientX, clientY }: MouseEvent) {
+    const nearbyHoverListener = ({ clientX, clientY }: MouseEvent) => {
       if (!buttonElement) {
         return;
       }
@@ -27,14 +28,15 @@ export default function DividerButton({ buttonElement, onClick }: Props) {
         }
       }
       setVisible(false);
-    }
-    window.addEventListener('mousemove', listener);
+    };
+    window.addEventListener('mousemove', nearbyHoverListener);
     return () => {
-      window.removeEventListener('mousemove', listener);
+      window.removeEventListener('mousemove', nearbyHoverListener);
     };
   }, [buttonElement, setVisible]);
 
   return (
+    // TODO make this an PlaceholderButton depend on the same
     <Fade in={visible}>
       <IconButton
         size="small"
@@ -42,7 +44,7 @@ export default function DividerButton({ buttonElement, onClick }: Props) {
           p: 0.12,
           position: 'absolute',
           top: '-12px',
-          left: '50%',
+          left: 'calc(50% - 1px)',
           transform: 'translateX(-10px)',
           bgcolor: 'brand.blue',
           color: 'primary.contrastText',
@@ -61,4 +63,6 @@ export default function DividerButton({ buttonElement, onClick }: Props) {
       </IconButton>
     </Fade>
   );
-}
+};
+
+export default DividerButton;

@@ -17,6 +17,5 @@ export default function buildBlockConfigurationSchema<T extends BaseZodDictionar
     })
   );
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return z.discriminatedUnion('type', blockObjects as any).transform((v) => v as BlockConfiguration<T>);
 }

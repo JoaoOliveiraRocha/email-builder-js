@@ -6,6 +6,7 @@ import { ButtonBase } from '@mui/material';
 type Props = {
   onClick: () => void;
 };
+
 export default function PlaceholderButton({ onClick }: Props) {
   return (
     <ButtonBase

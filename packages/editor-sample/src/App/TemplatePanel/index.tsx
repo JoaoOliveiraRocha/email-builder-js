@@ -20,7 +20,7 @@ import HtmlPanel from './HtmlPanel';
 import ImportJson from './ImportJson';
 import JsonPanel from './JsonPanel';
 import MainTabsGroup from './MainTabsGroup';
-import ShareButton from './ShareButton';
+// import ShareButton from './ShareButton';
 
 export default function TemplatePanel() {
   const document = useDocument();
@@ -107,7 +107,9 @@ export default function TemplatePanel() {
                 </Tooltip>
               </ToggleButton>
             </ToggleButtonGroup>
-            <ShareButton />
+
+            {/* I don't like this sharing way. Use JSONs, maybe a way to copy JSON directly */}
+            {/* <ShareButton /> */}
           </Stack>
         </Stack>
         <ToggleInspectorPanelButton />
